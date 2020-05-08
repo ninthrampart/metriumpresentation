@@ -83,10 +83,10 @@ class PropertyData extends React.Component<PropertyDataProps>{
         } as React.CSSProperties;
 
         const price1Style1 = {
-            fontFamily: 'Circe',
+            fontFamily: 'Roboto',
             fontStyle: 'normal',
             fontWeight: 'bold',
-            fontSize: 12,
+            fontSize: `clamp(6px, 2.5vw, 12px)`,
             letterSpacing: '0.05em',
             textTransform: 'uppercase',
             color: '#90AFB6',
@@ -95,10 +95,10 @@ class PropertyData extends React.Component<PropertyDataProps>{
 
 
         const price1Style2 = {
-            fontFamily: 'Circe',
+            fontFamily: 'Roboto',
             fontStyle: 'normal',
             fontWeight: 'bold',
-            fontSize: 12,
+            fontSize: `clamp(6px, 2.5vw, 12px)`,
             letterSpacing: '0.05em',
             textTransform: 'uppercase',
             color: '#90AFB6',
@@ -106,10 +106,10 @@ class PropertyData extends React.Component<PropertyDataProps>{
         } as React.CSSProperties;
 
         const price2Style1 = {
-            fontFamily: 'PT Sans',
+            fontFamily: 'Roboto',
             fontStyle: 'normal',
             fontWeight: 'bold',
-            fontSize: 24,
+            fontSize: `clamp(16px, 3vw, 24px)`,
             letterSpacing: '0.05em',
             textTransform: 'uppercase',
             color: '#363E42',
@@ -118,10 +118,10 @@ class PropertyData extends React.Component<PropertyDataProps>{
 
 
         const price2Style2 = {
-            fontFamily: 'PT Sans',
+            fontFamily: 'Roboto',
             fontStyle: 'normal',
             fontWeight: 'bold',
-            fontSize: 24,
+            fontSize: `clamp(16px, 3vw, 24px)`,
             letterSpacing: '0.05em',
             textTransform: 'uppercase',
             color: '#363E42',
@@ -129,7 +129,7 @@ class PropertyData extends React.Component<PropertyDataProps>{
         } as React.CSSProperties;
 
         const data1Style = {            
-            fontFamily: 'Circe',
+            fontFamily: 'Roboto',
             fontStyle: 'normal',
             fontWeight: 'normal',
             fontSize: `clamp(8px, 3vw, 18px)`,
@@ -139,7 +139,7 @@ class PropertyData extends React.Component<PropertyDataProps>{
 
 
         const data2Style = {
-            fontFamily: 'Circe',
+            fontFamily: 'Roboto',
             fontStyle: 'normal',
             fontWeight: 'normal',
             fontSize: `clamp(8px, 3vw, 18px)`,

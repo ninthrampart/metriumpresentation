@@ -76,10 +76,10 @@ class PropertyLayout extends React.Component<PropertyLayoutProps>{
         } as React.CSSProperties;
 
         const price1Style = {
-            fontFamily: 'Circe',
+            fontFamily: 'Roboto',
             fontStyle: 'normal',
             fontWeight: 'bold',
-            fontSize: 12,
+            fontSize: `clamp(6px, 2.5vw, 12px)`,
             letterSpacing: '0.05em',
             textTransform: 'uppercase',
             color: '#90AFB6',
@@ -89,10 +89,10 @@ class PropertyLayout extends React.Component<PropertyLayoutProps>{
         } as React.CSSProperties;
 
         const price1Style1 = {
-            fontFamily: 'Circe',
+            fontFamily: 'Roboto',
             fontStyle: 'normal',
             fontWeight: 'bold',
-            fontSize: 12,
+            fontSize: `clamp(6px, 2.5vw, 12px)`,
             letterSpacing: '0.05em',
             textTransform: 'uppercase',
             color: '#90AFB6',
@@ -100,12 +100,12 @@ class PropertyLayout extends React.Component<PropertyLayoutProps>{
         } as React.CSSProperties;
 
         const price2Style = {
-            fontFamily: 'PT Sans',
+            fontFamily: 'Roboto',
             fontStyle: 'normal',
             fontWeight: 'bold',
-            fontSize: 24,
+            fontSize: `clamp(16px, 3vw, 24px)`,
             letterSpacing: '0.05em',
-            textTransform: 'uppercase',
+            // textTransform: 'uppercase',
             color: '#363E42',
             display: 'flex',
             justifyContent: 'center',
@@ -113,12 +113,12 @@ class PropertyLayout extends React.Component<PropertyLayoutProps>{
         } as React.CSSProperties;
 
         const price2Style1 = {
-            fontFamily: 'PT Sans',
+            fontFamily: 'Roboto',
             fontStyle: 'normal',
             fontWeight: 'bold',
-            fontSize: 24,
+            fontSize: `clamp(16px, 3vw, 24px)`,
             letterSpacing: '0.05em',
-            textTransform: 'uppercase',
+            // textTransform: 'uppercase',
             color: '#363E42',
             paddingLeft: '20px',
         } as React.CSSProperties;

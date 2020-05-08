@@ -145,7 +145,7 @@ class Presentation extends React.Component<PresentationProps, PresentationState>
 
                     </Navbar>
                     <Row>
-                        <Col><Welcome isLoaded={isLoaded} lead={lead}/></Col>
+                        <Col sm><Welcome isLoaded={isLoaded} lead={lead}/></Col>
                     </Row>
                     <BuildingData isLoaded={isLoaded} items={items} building={building} screenLayout={screenLayout} />
                     <SummaryTable isLoaded={isLoaded} items={items} building={building} />

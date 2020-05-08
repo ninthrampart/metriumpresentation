@@ -8,12 +8,13 @@ export interface PropertyStatusProps{
 function PropertyStatus(props: PropertyStatusProps){
 
     const statusSoldStyle = {
-        fontFamily: 'Circe',
+        fontFamily: 'Roboto',
+        fontSize: `clamp(12px, 3vw, 24px)`,
         color: '#A21501',
     }
 
     const statusAvailableStyle = {
-        fontFamily: 'Circe',
+        fontFamily: 'Roboto',
         color: '#28b463',
     }
     console.log(props.status);

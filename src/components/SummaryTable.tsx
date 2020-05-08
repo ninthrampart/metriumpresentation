@@ -41,7 +41,7 @@ class SummaryTable extends React.Component<SummaryTableProps>{
 //`clamp(8px, 3vw, 18px)`
         // 18
         const headerRowStyle = {
-            fontFamily: 'Circe',
+            fontFamily: 'Roboto',
             fontWeight: 'bold',
             fontSize: `clamp(8px, 2vw, 18px)`,
             letterSpacing: '0.05em',
@@ -50,7 +50,7 @@ class SummaryTable extends React.Component<SummaryTableProps>{
         } as React.CSSProperties;
 
         const dataRowStyle = {
-            fontFamily: 'Circe',
+            fontFamily: 'Roboto',
             fontWeight: 'normal',
             fontSize: `clamp(8px, 2vw, 18px)`,
             letterSpacing: '0.05em',
@@ -58,12 +58,12 @@ class SummaryTable extends React.Component<SummaryTableProps>{
         } as React.CSSProperties;
 
         const statusSoldStyle = {
-            fontFamily: 'Circe',
+            fontFamily: 'Roboto',
             color: '#A21501',
         } as React.CSSProperties;
 
         const statusAvailableStyle = {
-            fontFamily: 'Circe',
+            fontFamily: 'Roboto',
             color: '#363E42',
         } as React.CSSProperties;
 

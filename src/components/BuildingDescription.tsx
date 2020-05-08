@@ -33,15 +33,15 @@ class BuildingDescription extends React.Component<BuildingDescriptionProps>{
         } as React.CSSProperties;
 
         const buildingHeaderStyle = {
-            fontFamily: 'Circe',
+            fontFamily: 'Roboto',
             fontWeight: 'bold',
-            fontSize: 36,
+            fontSize: `clamp(18px, 3vw, 36px)`,
             letterSpacing: '0.05em',
             color: '#363E42',
         } as React.CSSProperties;
 
         const buildingDescriptionStyle = {
-            fontFamily: 'Circe',
+            fontFamily: 'Roboto',
             fontWeight: 'normal',
             fontSize: 16,
             letterSpacing: '0.05em',

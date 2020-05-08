@@ -1,5 +1,7 @@
 import React from "react";
 import { Lead } from "../models/Lead";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 export interface WelcomeProps{
     isLoaded: boolean;
@@ -18,7 +20,7 @@ class Welcome extends React.Component<WelcomeProps>{
         } as React.CSSProperties;
 
         const statusSoldStyle = {
-            fontFamily: 'Circe',
+            fontFamily: 'Roboto',
             color: '#A21501',
         } as React.CSSProperties;
 
@@ -38,9 +40,19 @@ class Welcome extends React.Component<WelcomeProps>{
         {
             return(
                 <div style={divStyle}>
-                    <div className="pl-5" style={{fontFamily: 'Circe',fontWeight: 350,fontSize: `calc(100% + 1vw + 1vh)`,letterSpacing: '0.05em',color: '#FFFFFF', paddingTop: '5%'}}>Здравствуйте, {this.props.lead.firstname}!</div>
-                    <div className="pl-5" style={{fontFamily: 'Circe',fontWeight: 400,fontSize: 18,letterSpacing: '0.05em',color: '#FFFFFF', paddingBottom: '5%'}}>Мы подобрали квартиры, максимально соответствующие Вашим запросам.<br/> С ними Вы можете ознакомиться ниже.</div>
+                    <div className="pl-4 pr-4" style={{fontFamily: 'Roboto',fontWeight: 350,fontSize: `calc(100% + 1vw + 1vh)`,letterSpacing: '0.05em',color: '#FFFFFF', paddingTop: '5%'}}>Здравствуйте, {this.props.lead.firstname}!</div>
+                    <div className="pl-4 pr-4" style={{fontFamily: 'Roboto',fontWeight: 400,fontSize: 18,letterSpacing: '0.05em',color: '#FFFFFF', paddingBottom: '5%'}}><p>Мы подобрали квартиры, максимально соответствующие Вашим запросам.</p> <p>С ними Вы можете ознакомиться ниже.</p></div>
                 </div>
+                // <>
+                // <Row style={divStyle}>                    
+                //     <Col style={{fontFamily: 'Roboto',fontWeight: 350,fontSize: `calc(100% + 1vw + 1vh)`,letterSpacing: '0.05em',color: '#FFFFFF', paddingTop: '5%'}} sm={12}>
+                //         <p>Здравствуйте, {this.props.lead.firstname}!</p>
+                //     </Col>
+                //     <Col style={{fontFamily: 'Roboto',fontWeight: 400,fontSize: 18,letterSpacing: '0.05em',color: '#FFFFFF', paddingBottom: '5%'}} sm={12}><p>Мы подобрали квартиры, максимально соответствующие Вашим запросам.</p> 
+                //         <p>С ними Вы можете ознакомиться ниже.</p>
+                //     </Col>
+                // </Row>
+                // </>
             );
         }
     }

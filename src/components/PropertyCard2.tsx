@@ -54,17 +54,18 @@ class PropertyCard extends React.Component<PropertyCardProps>{
 
 
         const header1Style = {
-            fontFamily: 'Circe',
+            fontFamily: 'Roboto',
             fontStyle: 'normal',
             fontWeight: 'bold',
-            fontSize: 24,
+            fontSize: `clamp(12px, 3vw, 24px)`,
             letterSpacing: '0.05em',
             color: '#363E42',
+            paddingLeft: '35px',
         } as React.CSSProperties;
 
 
         const header3Style = {
-            fontFamily: 'Circe',
+            fontFamily: 'Roboto',
             fontStyle: 'normal',
             fontWeight: 'bold',
             fontSize: 24,
@@ -75,7 +76,7 @@ class PropertyCard extends React.Component<PropertyCardProps>{
 
 
         const price1Style = {
-            fontFamily: 'Circe',
+            fontFamily: 'Roboto',
             fontStyle: 'normal',
             fontWeight: 'bold',
             fontSize: 12,
@@ -86,7 +87,7 @@ class PropertyCard extends React.Component<PropertyCardProps>{
 
 
         const price1Style1 = {
-            fontFamily: 'Circe',
+            fontFamily: 'Roboto',
             fontStyle: 'normal',
             fontWeight: 'bold',
             fontSize: 12,
@@ -98,7 +99,7 @@ class PropertyCard extends React.Component<PropertyCardProps>{
 
 
         const price1Style2 = {
-            fontFamily: 'Circe',
+            fontFamily: 'Roboto',
             fontStyle: 'normal',
             fontWeight: 'bold',
             fontSize: 12,
@@ -110,7 +111,7 @@ class PropertyCard extends React.Component<PropertyCardProps>{
 
 
         const price2Style = {
-            fontFamily: 'Circe',
+            fontFamily: 'Roboto',
             fontStyle: 'normal',
             fontWeight: 'bold',
             fontSize: 26,
@@ -121,7 +122,7 @@ class PropertyCard extends React.Component<PropertyCardProps>{
 
 
         const price2Style1 = {
-            fontFamily: 'Circe',
+            fontFamily: 'Roboto',
             fontStyle: 'normal',
             fontWeight: 'bold',
             fontSize: 26,
@@ -133,7 +134,7 @@ class PropertyCard extends React.Component<PropertyCardProps>{
 
 
         const price2Style2 = {
-            fontFamily: 'Circe',
+            fontFamily: 'Roboto',
             fontStyle: 'normal',
             fontWeight: 'bold',
             fontSize: 26,
@@ -146,7 +147,7 @@ class PropertyCard extends React.Component<PropertyCardProps>{
 //fontSize: `clamp(8px, 3vw, 18px)`,
         //18
         const data1Style = {            
-            fontFamily: 'Circe',
+            fontFamily: 'Roboto',
             fontStyle: 'normal',
             fontWeight: 'normal',
             fontSize: `clamp(8px, 3vw, 18px)`,
@@ -156,7 +157,7 @@ class PropertyCard extends React.Component<PropertyCardProps>{
 
 
         const data2Style = {
-            fontFamily: 'Circe',
+            fontFamily: 'Roboto',
             fontStyle: 'normal',
             fontWeight: 'normal',
             fontSize: `clamp(8px, 3vw, 18px)`,
@@ -177,8 +178,8 @@ class PropertyCard extends React.Component<PropertyCardProps>{
                     <Card.Body>
                         <Card.Title>
                             <Row>
-                                <Col style={header1Style}>{this.props.item.mtr_rooms}-комнатная квартира</Col>
-                                <PropertyStatus status={this.props.item.statuscode} />
+                                <Col md={4} xs={7} style={header1Style}>{this.props.item.mtr_rooms}-комнатная квартира</Col>
+                                <Col md={4} xs={5}><PropertyStatus status={this.props.item.statuscode}/></Col>
                                 <Col style={getHeaderStyle1()}>{this.props.buildingName}</Col>
                             </Row>
                             <hr/>
