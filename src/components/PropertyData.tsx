@@ -106,10 +106,10 @@ class PropertyData extends React.Component<PropertyDataProps>{
         } as React.CSSProperties;
 
         const price2Style1 = {
-            fontFamily: 'Circe',
+            fontFamily: 'PT Sans',
             fontStyle: 'normal',
             fontWeight: 'bold',
-            fontSize: 26,
+            fontSize: 24,
             letterSpacing: '0.05em',
             textTransform: 'uppercase',
             color: '#363E42',
@@ -118,10 +118,10 @@ class PropertyData extends React.Component<PropertyDataProps>{
 
 
         const price2Style2 = {
-            fontFamily: 'Circe',
+            fontFamily: 'PT Sans',
             fontStyle: 'normal',
             fontWeight: 'bold',
-            fontSize: 26,
+            fontSize: 24,
             letterSpacing: '0.05em',
             textTransform: 'uppercase',
             color: '#363E42',
@@ -152,8 +152,10 @@ class PropertyData extends React.Component<PropertyDataProps>{
             <>
             <Col sm={6}> 
                 <Row>
-                    <Col style={getStyle1()} sm={6}><div style={price1Style1}>Общая стоимость:</div><div style={price2Style1}><NumberFormat value={this.props.item.mtr_price} displayType={'text'} thousandSeparator={' '} decimalSeparator={','} /> &#8381;</div></Col>
-                    <Col style={getStyle2()} sm={6}><div style={price1Style2}>Цена за м:</div><div style={price2Style2}><NumberFormat value={this.props.item.mtr_cost} displayType={'text'} thousandSeparator={' '} decimalSeparator={','} /> &#8381;</div></Col>
+                    <Col style={getStyle1()} sm={6}><div style={price1Style1}>Общая стоимость:</div><div style={price2Style1}>
+                        <NumberFormat value={this.props.item.mtr_price} displayType={'text'} thousandSeparator={' '} decimalSeparator={','} /> &#8381;</div></Col>
+                    <Col style={getStyle2()} sm={6}><div style={price1Style2}>Цена за м:</div><div style={price2Style2}>
+                        <NumberFormat value={this.props.item.mtr_cost} displayType={'text'} thousandSeparator={' '} decimalSeparator={','} /> &#8381;</div></Col>
                     <Col sm={12}>
                     <ul className="list-group list-group-flush" >
                                     <li className="list-group-item">

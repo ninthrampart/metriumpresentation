@@ -100,10 +100,10 @@ class PropertyLayout extends React.Component<PropertyLayoutProps>{
         } as React.CSSProperties;
 
         const price2Style = {
-            fontFamily: 'Circe',
+            fontFamily: 'PT Sans',
             fontStyle: 'normal',
             fontWeight: 'bold',
-            fontSize: 26,
+            fontSize: 24,
             letterSpacing: '0.05em',
             textTransform: 'uppercase',
             color: '#363E42',
@@ -113,10 +113,10 @@ class PropertyLayout extends React.Component<PropertyLayoutProps>{
         } as React.CSSProperties;
 
         const price2Style1 = {
-            fontFamily: 'Circe',
+            fontFamily: 'PT Sans',
             fontStyle: 'normal',
             fontWeight: 'bold',
-            fontSize: 26,
+            fontSize: 24,
             letterSpacing: '0.05em',
             textTransform: 'uppercase',
             color: '#363E42',
@@ -127,7 +127,11 @@ class PropertyLayout extends React.Component<PropertyLayoutProps>{
             <Col sm={6}>
                 <Row>
                     {/* price1Style price2Style */}
-                    <Col sm={12}><div style={getStyle1()}>Площадь:</div><div style={getStyle2()}><NumberFormat value={this.props.item.mtr_quantity} displayType={'text'} thousandSeparator={' '} decimalSeparator={','} /> м2</div></Col>
+                    <Col sm={12}><div style={getStyle1()}>Площадь:</div>
+                        <div style={getStyle2()}>
+                            <NumberFormat value={this.props.item.mtr_quantity} displayType={'text'} thousandSeparator={' '} decimalSeparator={','} /> м&#178;
+                        </div>
+                    </Col>
                     <Col sm={12}><Card.Img src={this.props.item.mtr_layout}></Card.Img></Col>
                 </Row>
             </Col>

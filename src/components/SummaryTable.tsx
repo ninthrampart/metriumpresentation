@@ -86,7 +86,7 @@ class SummaryTable extends React.Component<SummaryTableProps>{
                         <th>Этаж</th>
                         <th>Площадь</th>
                         <th>Комнат</th>
-                        <th>Цена м2</th>
+                        <th>Цена м&#178;</th>
                         <th>Общая стоимость</th>
                         <th>Срок сдачи</th>
                     </tr>
