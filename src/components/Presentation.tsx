@@ -88,8 +88,8 @@ class Presentation extends React.Component<PresentationProps, PresentationState>
 
         const qId = window.location.pathname.replace('/','');
 
-        //const url = `http://localhost:5000/api/1/Presentation/query/${params.query}`;
-        const url = `https://crmdevapi.metrium.ru:9226/presentations/1/query/${params.query}`;
+        const url = `http://localhost:5000/api/1/Presentation/query/${params.query}`;
+        //const url = `https://crmdevapi.metrium.ru:9226/presentations/1/query/${params.query}`;
 
         fetch(url, {method: 'GET', mode: 'cors'})
             .then(res => res.json())
