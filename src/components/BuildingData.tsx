@@ -33,7 +33,7 @@ class BuildingData extends React.Component<BuildingDataProps>{
         {
             return (
                 <div>
-                    <Row className="pb-5 pt-5">
+                    <Row className="pb-3 pt-3">
                         <Col><BuildingDescription building={this.props.building} screenLayout={this.props.screenLayout} /></Col>
                     </Row>
                     {this.props.items.map((item : any) => (

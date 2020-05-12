@@ -35,7 +35,7 @@ class BuildingDescription extends React.Component<BuildingDescriptionProps>{
         const buildingHeaderStyle = {
             fontFamily: 'Roboto',
             fontWeight: 'bold',
-            fontSize: `clamp(18px, 3vw, 36px)`,
+            fontSize: `clamp(24px, 3vw, 36px)`,
             letterSpacing: '0.05em',
             color: '#363E42',
         } as React.CSSProperties;

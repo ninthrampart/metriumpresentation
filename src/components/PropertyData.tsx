@@ -1,12 +1,13 @@
-import React from "react";
-import Card from "react-bootstrap/Card";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import NumberFormat from "react-number-format";
-import { Property } from "../models/Property";
-import { ScreenLayout } from "../models/ScreenLayout";
+import React from 'react';
+import Card from 'react-bootstrap/Card';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import NumberFormat from 'react-number-format';
+import { Property } from '../models/Property';
+import { ScreenLayout } from '../models/ScreenLayout';
+import { version } from 'punycode';
 
-export interface PropertyDataProps{
+export interface PropertyDataProps {
     item: Property;
     screenLayout: ScreenLayout;
 }
@@ -16,9 +17,8 @@ export interface PropertyDataProps{
 //     height: number;
 // }
 //, PropertyDataState
-class PropertyData extends React.Component<PropertyDataProps>{
-
-    constructor(props: PropertyDataProps){
+class PropertyData extends React.Component<PropertyDataProps> {
+    constructor(props: PropertyDataProps) {
         super(props);
         console.log(props);
         // this.state = {
@@ -33,10 +33,9 @@ class PropertyData extends React.Component<PropertyDataProps>{
     //     // console.log(window.innerWidth);
 
     //     this.setState({
-    //         height: window.innerHeight, 
+    //         height: window.innerHeight,
     //         width: window.innerWidth
     //     } as PropertyDataState);
-
 
     //     // console.log(this.state.height);
     //     // console.log(this.state.width);
@@ -47,13 +46,9 @@ class PropertyData extends React.Component<PropertyDataProps>{
     //     console.table(this.state);
     //   }
 
-      
-
-
-    render(){
-
-        const getStyle1 = () : React.CSSProperties => {
-            if(this.props.screenLayout.width < 1024){
+    render() {
+        const getStyle1 = (): React.CSSProperties => {
+            if (this.props.screenLayout.width < 1024) {
                 console.log('moveRightStyle');
                 return moveRightStyle;
             }
@@ -61,8 +56,8 @@ class PropertyData extends React.Component<PropertyDataProps>{
             return moveRightStyle;
         };
 
-        const getStyle2 = () : React.CSSProperties => {
-            if(this.props.screenLayout.width < 1024){
+        const getStyle2 = (): React.CSSProperties => {
+            if (this.props.screenLayout.width < 1024) {
                 console.log('moveRightStyle');
                 return moveRightStyle;
             }
@@ -70,8 +65,8 @@ class PropertyData extends React.Component<PropertyDataProps>{
             return moveRightStyle2;
         };
 
-      const noMoveRightStyle = {
-        paddingLeft: '0px',
+        const noMoveRightStyle = {
+            paddingLeft: '0px',
         } as React.CSSProperties;
 
         const moveRightStyle = {
@@ -92,7 +87,6 @@ class PropertyData extends React.Component<PropertyDataProps>{
             color: '#90AFB6',
             // paddingLeft: '18px',
         } as React.CSSProperties;
-
 
         const price1Style2 = {
             fontFamily: 'Roboto',
@@ -116,7 +110,6 @@ class PropertyData extends React.Component<PropertyDataProps>{
             // paddingLeft: '18px',
         } as React.CSSProperties;
 
-
         const price2Style2 = {
             fontFamily: 'Roboto',
             fontStyle: 'normal',
@@ -128,7 +121,7 @@ class PropertyData extends React.Component<PropertyDataProps>{
             // marginLeft: '-10px',
         } as React.CSSProperties;
 
-        const data1Style = {            
+        const data1Style = {
             fontFamily: 'Roboto',
             fontStyle: 'normal',
             fontWeight: 'normal',
@@ -136,7 +129,6 @@ class PropertyData extends React.Component<PropertyDataProps>{
             letterSpacing: '0.05em',
             color: '#838791',
         } as React.CSSProperties;
-
 
         const data2Style = {
             fontFamily: 'Roboto',
@@ -147,53 +139,123 @@ class PropertyData extends React.Component<PropertyDataProps>{
             color: '#363E42',
         } as React.CSSProperties;
 
+        const formatDate = (date?: string): string => {
+            if(date == null){
+                return '';
+            }
 
-        return(
+            const l = date.length;
+            let s = date.substr(0, l - 4);
+            const lastpart = date.substr(l - 4);
+            const modified = lastpart.substr(2);
+            s += modified;
+
+            return s;
+        };
+
+        return (
             <>
-            <Col sm={6}> 
-                <Row>
-                    <Col style={getStyle1()} sm={6}><div style={price1Style1}>Общая стоимость:</div><div style={price2Style1}>
-                        <NumberFormat value={this.props.item.mtr_price} displayType={'text'} thousandSeparator={' '} decimalSeparator={','} /> &#8381;</div></Col>
-                    <Col style={getStyle2()} sm={6}><div style={price1Style2}>Цена за м:</div><div style={price2Style2}>
-                        <NumberFormat value={this.props.item.mtr_cost} displayType={'text'} thousandSeparator={' '} decimalSeparator={','} /> &#8381;</div></Col>
-                    <Col sm={12}>
-                    <ul className="list-group list-group-flush" >
-                                    <li className="list-group-item">
-                                        <Row> <Col style={data1Style} className="col-8">Срок РВЭ</Col>
-                                            <Col style={data2Style} className="col-4">{this.props.item.mtr_housingid.mtr_date_exploitation_plan_string}</Col></Row>
-                                    </li>
-                                    <li className="list-group-item">
-                                        <Row> <Col style={data1Style} className="col-8">Очередь</Col>
-                                            <Col style={data2Style} className="col-4">{this.props.item.mtr_housingid.mtr_numberqueue}</Col></Row>
-                                    </li>
-                                    <li className="list-group-item">
-                                        <Row> <Col style={data1Style} className="col-8">Корпус</Col>
-                                            <Col style={data2Style} className="col-4">{this.props.item.mtr_housingid.mtr_housing_number}</Col></Row>
-                                    </li>
-                                    <li className="list-group-item">
-                                        <Row> <Col style={data1Style} className="col-8">Секция</Col>
-                                            <Col style={data2Style} className="col-4">{this.props.item.mtr_sectionnumber}</Col></Row>
-                                    </li>
-                                    <li className="list-group-item">
-                                        <Row> <Col style={data1Style} className="col-8">Этаж</Col>
-                                            <Col style={data2Style} className="col-4">{this.props.item.mtr_floor}</Col></Row>
-                                    </li>
-                                    <li className="list-group-item">
-                                        <Row> <Col style={data1Style} className="col-8">Уровень отделки</Col>
-                                            <Col style={data2Style} className="col-4">{this.props.item.mtr_furnish_level}</Col></Row>
-                                    </li>
-                                </ul>
-                    </Col>
-                </Row> 
-            </Col>
-
-            
-            
-            
+                <Col sm={6}>
+                    <Row>
+                        <Col style={getStyle1()} sm={6}>
+                            <div style={price1Style1}>Общая стоимость:</div>
+                            <div style={price2Style1}>
+                                <NumberFormat
+                                    value={this.props.item.mtr_price}
+                                    displayType={'text'}
+                                    thousandSeparator={' '}
+                                    decimalSeparator={','}
+                                />{' '}
+                                &#8381;
+                            </div>
+                        </Col>
+                        <Col style={getStyle2()} sm={6}>
+                            <div style={price1Style2}>Цена за м&#178;:</div>
+                            <div style={price2Style2}>
+                                <NumberFormat
+                                    value={this.props.item.mtr_cost}
+                                    displayType={'text'}
+                                    thousandSeparator={' '}
+                                    decimalSeparator={','}
+                                />{' '}
+                                &#8381;
+                            </div>
+                        </Col>
+                        <Col sm={12}>
+                            <ul className="list-group list-group-flush">
+                                <li className="list-group-item">
+                                    <Row>
+                                        {' '}
+                                        <Col style={data1Style} className="col-8">
+                                            Срок РВЭ
+                                        </Col>
+                                        <Col style={data2Style} className="col-4">
+                                            {formatDate(this.props.item.mtr_housingid.mtr_date_exploitation_plan_string)}
+                                        </Col>
+                                    </Row>
+                                </li>
+                                <li className="list-group-item">
+                                    <Row>
+                                        {' '}
+                                        <Col style={data1Style} className="col-8">
+                                            Очередь
+                                        </Col>
+                                        <Col style={data2Style} className="col-4">
+                                            {this.props.item.mtr_housingid.mtr_numberqueue}
+                                        </Col>
+                                    </Row>
+                                </li>
+                                <li className="list-group-item">
+                                    <Row>
+                                        {' '}
+                                        <Col style={data1Style} className="col-8">
+                                            Корпус
+                                        </Col>
+                                        <Col style={data2Style} className="col-4">
+                                            {this.props.item.mtr_housingid.mtr_housing_number}
+                                        </Col>
+                                    </Row>
+                                </li>
+                                <li className="list-group-item">
+                                    <Row>
+                                        {' '}
+                                        <Col style={data1Style} className="col-8">
+                                            Секция
+                                        </Col>
+                                        <Col style={data2Style} className="col-4">
+                                            {this.props.item.mtr_sectionnumber}
+                                        </Col>
+                                    </Row>
+                                </li>
+                                <li className="list-group-item">
+                                    <Row>
+                                        {' '}
+                                        <Col style={data1Style} className="col-8">
+                                            Этаж
+                                        </Col>
+                                        <Col style={data2Style} className="col-4">
+                                            {this.props.item.mtr_floor}
+                                        </Col>
+                                    </Row>
+                                </li>
+                                <li className="list-group-item">
+                                    <Row>
+                                        {' '}
+                                        <Col style={data1Style} className="col-8">
+                                            Уровень отделки
+                                        </Col>
+                                        <Col style={data2Style} className="col-4">
+                                            {this.props.item.mtr_furnish_level}
+                                        </Col>
+                                    </Row>
+                                </li>
+                            </ul>
+                        </Col>
+                    </Row>
+                </Col>
             </>
         );
     }
-
 }
 
 export default PropertyData;
